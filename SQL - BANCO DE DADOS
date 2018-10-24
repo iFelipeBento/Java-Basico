@@ -1,0 +1,18 @@
+
+create table VENDEDOR(
+    codigo smallint primary key not null AUTO_INCREMENT,
+    nome varchar(100) not null,
+    salario decimal (8,2),
+    telefone int,
+    sexo ENUM( 'M', 'F' ));
+    
+create table FABRICANTE(
+    codigo smallint primary key not null,
+    nome varchar(100) not null);
+    
+create table PRODUTO(
+    codigo smallint primary key not null AUTO_INCREMENT,
+    nome varchar(100) not null,
+    preco decimal(8,2),
+    fabricante smallint, 
+    FOREIGN KEY (FABRICANTE) REFERENCES FABRICANTE (codigo));
